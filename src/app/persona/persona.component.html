@@ -1,5 +1,10 @@
-<div>
-    <p>
-       indice:{{indice+1}} nombre: {{persona.nombre}} apellido: {{persona.apellido}}
-    </p>
+<div class="row">
+    <div class="col-xs-12">
+        <div>
+            <p>
+            indice:{{indice+1}} nombre: {{persona.nombre}} apellido: {{persona.apellido}}
+            </p>
+            <button type="submit" class="btn btn-info" (click)="emitirSaludo()">Editar</button>
+        </div>
+    </div>
 </div>

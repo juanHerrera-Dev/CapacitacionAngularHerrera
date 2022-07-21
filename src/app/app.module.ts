@@ -11,6 +11,8 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { FormularioCComponent } from './ejercicioCalculadora/formulario-c/formulario-c.component';
 import { CalculadoraComponent } from './ejercicioCalculadora/calculadora/calculadora.component';
 import { ResultadoComponent } from './ejercicioCalculadora/resultado/resultado.component';
+import { LoggingService } from './loggingService.service';
+import { PersonasService } from './personas.Service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { ResultadoComponent } from './ejercicioCalculadora/resultado/resultado.c
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoggingService,PersonasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

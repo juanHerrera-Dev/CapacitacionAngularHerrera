@@ -1,0 +1,33 @@
+-Servicios:
+
+-inyeccion de dependencia es la forma de usar un servicio en algun componente que lo necesite, para crear una instancia a nivel del componente se debe agregar a providers, 
+en caso de querer que todos los componentes lo usen agregarlo a providers pero del modulo.
+
+-DATA Services(sirve para tener los datos en los servicios y no en los componentes):
+
+-Inyectar un servicio a otro servicio:
+
+para lograr esto se debe agregar el decorador @Injectable() a la clase del servicio donde se quiere inyectar,
+y definirlo en el constructor.
+
+-Enviar datos entre componentes usando un servicio:
+
+se utiliza al servicio como medio para transpasar datos entre componentes, en el servicio se instancia
+una variable de tipo EventEmitter<tipo> y desde los componentes se la pueden acceder para hacer emit(si se quiere enviar) 
+o suscribe(si se quiere recibir)
+
+ej:
+
+.ts persona //hijo
+
+this.personasService.saludo.emit(this.indice);//envia el indice por el servico
+
+.ts lista De personas //padre
+
+    this.personasService.saludo.subscribe(
+      (indice: number) => alert("el indice es: "+  indice)
+    );//recibe el evento y cuando esta listo despliega una alerta
+
+.ts personasService
+
+saludo = new EventEmitter<number>();// con eso solo es suficiente para hacerlo.
