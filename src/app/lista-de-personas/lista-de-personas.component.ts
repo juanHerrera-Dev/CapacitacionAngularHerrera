@@ -21,7 +21,13 @@ export class ListaDePersonasComponent implements OnInit {
   ngOnInit(): void {
       this.personas= this.personasService.getPersonas();//al darle las personas por referencia siempre esta actualizado y asi se renderiza.
   }
-   
-   
+   /*
+   pepe(){
+    this.personasService.getPersonas().subscribe(r => {
+      this.personas = r
+    }, error =>{
 
+    })
+   }
+   */
 }
