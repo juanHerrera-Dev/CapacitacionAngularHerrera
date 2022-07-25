@@ -68,6 +68,18 @@ html {
     padding-bottom: 6px;
     border-width: 0;
   }
+
+  .button-red {
+    min-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #d63940;
+    color: #fff;
+    font-size: 30px;
+    padding-bottom: 6px;
+    border-width: 0;
+  }
   
   input[type="text"] {
     text-align: center;
@@ -89,3 +101,4 @@ html {
     color: grey;
     opacity: 1;
   }
+

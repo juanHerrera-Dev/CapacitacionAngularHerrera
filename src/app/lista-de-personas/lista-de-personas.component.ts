@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Persona } from '../persona.model';
 import { PersonasService } from '../personas.Service';
 
@@ -12,7 +13,7 @@ export class ListaDePersonasComponent implements OnInit {
 
   personas!: Persona[];
   
-  constructor(private personasService: PersonasService) {
+  constructor(private router: Router, private personasService: PersonasService) {
     this.personasService.saludo.subscribe(
       (indice: number) => alert("el indice es: "+  indice)
     );
@@ -20,6 +21,9 @@ export class ListaDePersonasComponent implements OnInit {
   
   ngOnInit(): void {
       this.personas= this.personasService.getPersonas();//al darle las personas por referencia siempre esta actualizado y asi se renderiza.
+  }
+  navegarAAgregarPersona():void{
+    this.router.navigate(['personas/agregar']);
   }
    /*
    pepe(){
