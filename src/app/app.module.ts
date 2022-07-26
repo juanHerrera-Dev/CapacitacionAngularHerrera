@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { PersonaComponent } from './lista-de-personas/persona/persona.component';
@@ -9,10 +11,15 @@ import { FormularioComponent } from './lista-de-personas/formulario/formulario.c
 import { FormularioCComponent } from './ejercicioCalculadora/formulario-c/formulario-c.component';
 import { CalculadoraComponent } from './ejercicioCalculadora/calculadora/calculadora.component';
 import { ResultadoComponent } from './ejercicioCalculadora/resultado/resultado.component';
+import { ErrorComponent } from './error-component/error-component.component';
+
 import { LoggingService } from './loggingService.service';
 import { PersonasService } from './personas.Service';
-import { AppRoutingModule } from './app-routing.module';
-import { ErrorComponent } from './error-component/error-component.component';
+import { DataService } from './servicios/data.services';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './servicios/login.service';
+import { LoginGuard } from './servicios/loginGuard.service';
+
 
 @NgModule({
   declarations: [
@@ -23,14 +30,16 @@ import { ErrorComponent } from './error-component/error-component.component';
     FormularioComponent,
     FormularioCComponent,
     ResultadoComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [LoggingService,PersonasService],
+  providers: [LoggingService, PersonasService, DataService, LoginService, LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

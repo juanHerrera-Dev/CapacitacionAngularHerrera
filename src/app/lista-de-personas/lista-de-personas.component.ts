@@ -19,11 +19,18 @@ export class ListaDePersonasComponent implements OnInit {
     );
   }
   
-  ngOnInit(): void {
-      this.personas= this.personasService.getPersonas();//al darle las personas por referencia siempre esta actualizado y asi se renderiza.
+  ngOnInit():void {
+      this.getPersonasI();//al darle las personas por referencia siempre esta actualizado y asi se renderiza.
   }
-  navegarAAgregarPersona():void{
-    this.router.navigate(['personas/agregar']);
+  
+  getPersonasI(){
+    this.personasService.getPersonas()
+      .subscribe(
+        (personasBase: Persona[]) => {
+           this.personas = personasBase;
+           this.personasService.setPersonas(personasBase);
+          }
+      );
   }
    /*
    pepe(){

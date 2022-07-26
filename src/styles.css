@@ -101,4 +101,12 @@ html {
     color: grey;
     opacity: 1;
   }
+  .boxcentrado {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
 

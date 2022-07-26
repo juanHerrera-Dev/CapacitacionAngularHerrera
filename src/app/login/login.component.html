@@ -1,0 +1,34 @@
+<div class="box">
+  <form class="item" #f="ngForm" (ngSubmit)="f.form.valid && login(f)">
+    <div>
+        <input type="email" name="email" placeholder="email" ngModel required size="20">
+    </div>
+    <div>
+        <input type="password" name="password" placeholder="password" ngModel required size="15">
+    </div>
+    <button type="submit" style="cursor: pointer">+</button>
+  </form>
+</div>
+
+<!--
+    ejemplo angular de validacion de formulario
+
+        <input type="text" id="name" name="name" class="form-control" placeholder="Nombre"
+            minlength="4" appForbiddenName="bob"
+            required [(ngModel)]="inputT" #name="ngModel">
+
+        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+            class="alert">
+        
+        <div *ngIf="name.errors?.['required']">
+            Name is required.
+        </div>
+        <div *ngIf="name.errors?.['minlength']">
+            Name must be at least 4 characters long.
+        </div>
+        <div *ngIf="name.errors?.['forbiddenName']">
+            Name cannot be Bob.
+        </div>
+        
+        </div>
+        -->
